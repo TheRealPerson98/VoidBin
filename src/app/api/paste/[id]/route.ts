@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
 // Define allowed origins for GET requests
-const ALLOWED_ORIGINS = ['https://voidbin.vercel.app', 'http://localhost:3000'];
+const ALLOWED_ORIGINS = ['https://voidbin.com/', 'http://localhost:3000'];
 
 // Helper function to check if request is from allowed origin
 function isRequestFromAllowedOrigin(request: NextRequest): boolean {

@@ -4,7 +4,7 @@ import { getClientIP } from '@/lib/ip';
 
 const HOURLY_PASTE_LIMIT = 5000;
 // Define allowed origins for GET requests
-const ALLOWED_ORIGINS = ['https://voidbin.com', 'http://localhost:3000'];
+const ALLOWED_ORIGINS = ['https://voidbin.com/', 'http://localhost:3000'];
 
 // Helper function to check if request is from allowed origin
 function isRequestFromAllowedOrigin(request: NextRequest): boolean {
