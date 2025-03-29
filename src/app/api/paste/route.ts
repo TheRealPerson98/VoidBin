@@ -3,6 +3,16 @@ import { prisma } from '@/lib/prisma';
 import { getClientIP } from '@/lib/ip';
 
 const HOURLY_PASTE_LIMIT = 5000;
+// Define allowed origins for GET requests
+const ALLOWED_ORIGINS = ['https://voidbin.com', 'http://localhost:3000'];
+
+// Helper function to check if request is from allowed origin
+function isRequestFromAllowedOrigin(request: NextRequest): boolean {
+  const referer = request.headers.get('referer');
+  if (!referer) return false;
+  
+  return ALLOWED_ORIGINS.some(origin => referer.startsWith(origin));
+}
 
 async function checkIPLimit(ipAddress: string): Promise<boolean> {
   const now = new Date();
@@ -101,8 +111,16 @@ export async function POST(request: NextRequest) {
   }
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
+    // Only allow GET requests from the website
+    if (!isRequestFromAllowedOrigin(request)) {
+      return NextResponse.json(
+        { error: 'Access denied. This API endpoint can only be accessed from the VoidBin website.' },
+        { status: 403 }
+      );
+    }
+
     const recentPastes = await prisma.paste.findMany({
       take: 10,
       orderBy: { createdAt: 'desc' },

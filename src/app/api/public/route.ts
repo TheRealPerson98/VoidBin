@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { getClientIP } from '@/lib/ip';
 
@@ -56,7 +56,7 @@ async function checkIPLimit(ipAddress: string): Promise<boolean> {
   return true;
 }
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const ipAddress = await getClientIP();
     const canProcessRequest = await checkIPLimit(ipAddress);
