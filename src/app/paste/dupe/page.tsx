@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
-export default function DupePastePage() {
+// Separate component that uses useSearchParams
+function DupePasteContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [content, setContent] = useState('');
@@ -190,5 +191,23 @@ export default function DupePastePage() {
         </div>
       )}
     </div>
+  );
+}
+
+// Loading component for Suspense fallback
+function LoadingDupePage() {
+  return (
+    <div className="fixed inset-0 flex items-center justify-center bg-[#0a171e] text-white">
+      <p>Loading...</p>
+    </div>
+  );
+}
+
+// Main component with Suspense boundary
+export default function DupePastePage() {
+  return (
+    <Suspense fallback={<LoadingDupePage />}>
+      <DupePasteContent />
+    </Suspense>
   );
 } 

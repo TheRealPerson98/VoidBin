@@ -12,13 +12,14 @@ function isRequestFromAllowedOrigin(request: NextRequest): boolean {
   return ALLOWED_ORIGINS.some(origin => referer.startsWith(origin));
 }
 
-interface RouteParams {
-  params: {
-    id: string;
-  };
-}
+type RouteParams = {
+  params: Promise<{ id: string }>;
+};
 
-export async function GET(request: NextRequest, { params }: RouteParams) {
+export async function GET(
+  request: NextRequest,
+  { params }: RouteParams
+) {
   try {
     // Only allow GET requests from the website
     if (!isRequestFromAllowedOrigin(request)) {
@@ -28,7 +29,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       );
     }
     
-    const { id } = params;
+    const { id } = await params;
     
     if (!id) {
       return NextResponse.json(

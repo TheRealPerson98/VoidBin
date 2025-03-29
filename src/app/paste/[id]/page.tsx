@@ -1,13 +1,12 @@
 import { notFound } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
 import PasteViewer from '@/components/PasteViewer';
-import type { Metadata } from 'next';
+import type { Metadata, ResolvingMetadata } from 'next';
 
-interface PastePageProps {
-  params: {
-    id: string;
-  };
-}
+type Props = {
+  params: Promise<{ id: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+};
 
 async function getPaste(id: string) {
   try {
@@ -23,9 +22,13 @@ async function getPaste(id: string) {
 }
 
 export async function generateMetadata(
-  { params }: PastePageProps
+  { params }: Props,
+  parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const { id } = params;
+  // read route params
+  const { id } = await params;
+  
+  // fetch data
   const paste = await getPaste(id);
   
   if (!paste) {
@@ -41,14 +44,22 @@ export async function generateMetadata(
     .join('\n')
     .substring(0, 150);
   
+  // optionally access and extend parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+  
   return {
     title: paste.title || 'Untitled Paste',
     description: contentPreview || 'No content',
+    openGraph: {
+      title: paste.title || 'Untitled Paste',
+      description: contentPreview || 'VoidBin Paste',
+      images: [...previousImages],
+    },
   };
 }
 
-export default async function PastePage({ params }: PastePageProps) {
-  const { id } = params;
+export default async function PastePage({ params }: Props) {
+  const { id } = await params;
   
   if (!id) {
     notFound();
