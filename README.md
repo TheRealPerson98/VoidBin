@@ -22,7 +22,7 @@
 
 ## ✦ OVERVIEW
 
-**VOID|BIN** delivers an unparalleled code-sharing experience with end-to-end encryption, real-time collaboration, and meticulous attention to design. Every element has been crafted to provide both aesthetic appeal and seamless functionality.
+**VOID|BIN** delivers an unparalleled paste-sharing experience with and meticulous attention to design. Every element has been crafted to provide both aesthetic appeal and seamless functionality.
 
 <br/>
 
@@ -34,16 +34,8 @@
       <h3>⚡ PERFORMANCE</h3>
       <p>Lightning-fast response times powered by Next.js architecture and optimized code delivery</p>
     </td>
-    <td width="50%" valign="top">
-      <h3>🔒 SECURITY</h3>
-      <p>End-to-end encryption ensures your data remains private at every stage of transmission</p>
-    </td>
   </tr>
   <tr>
-    <td width="50%" valign="top">
-      <h3>✨ SYNTAX HIGHLIGHTING</h3>
-      <p>Precision language detection with stunning highlighting for over 100 programming languages</p>
-    </td>
     <td width="50%" valign="top">
       <h3>🎭 DARK MODE</h3>
       <p>Refined dark theme designed for extended coding sessions with reduced eye strain</p>
@@ -53,10 +45,6 @@
     <td width="50%" valign="top">
       <h3>📱 RESPONSIVE</h3>
       <p>Flawlessly adapts to any device with carefully crafted breakpoints for optimal viewing</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>👥 COLLABORATION</h3>
-      <p>Seamlessly share code with colleagues through elegantly designed shareable links</p>
     </td>
   </tr>
 </table>
