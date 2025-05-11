@@ -95,7 +95,7 @@ export default function Footer() {
             <div className="flex flex-wrap justify-center gap-6 mb-8">
               {[
                 { 
-                  href: "https://github.com/TheRealPerson98/VoidBin", 
+                  href: "https://github.com/thejacedev/VoidBin", 
                   label: "VoidBin Repository",
                   icon: (
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -104,7 +104,7 @@ export default function Footer() {
                   )
                 },
                 { 
-                  href: "https://github.com/TheRealPerson98/", 
+                  href: "https://github.com/thejacedev/", 
                   label: "GitHub Profile",
                   icon: (
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

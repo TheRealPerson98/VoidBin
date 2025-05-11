@@ -8,7 +8,7 @@
   <br/>
   
   [![Live Demo](https://img.shields.io/badge/LIVE-DEMO-000000?style=for-the-badge)](https://voidbin.com)
-  [![GitHub stars](https://img.shields.io/github/stars/TheRealPerson98/VoidBin?style=for-the-badge&color=000000)](https://github.com/TheRealPerson98/VoidBin/stargazers)
+  [![GitHub stars](https://img.shields.io/github/stars/thejacedev/VoidBin?style=for-the-badge&color=000000)](https://github.com/thejacedev/VoidBin/stargazers)
   [![License](https://img.shields.io/badge/LICENSE-APACHE%202.0-000000?style=for-the-badge)](LICENSE)
 </div>
 
@@ -75,7 +75,7 @@ HIGHLIGHT  │ React Syntax Highlighter
 
 ```bash
 # Clone the repository
-git clone https://github.com/TheRealPerson98/VoidBin.git
+git clone https://github.com/thejacedev/VoidBin.git
 cd voidbin
 
 # Install dependencies
@@ -103,7 +103,7 @@ Access your local instance at [http://localhost:3000](http://localhost:3000)
 
 ### VERCEL DEPLOYMENT
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FTheRealPerson98%2FVoidBin)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fthejacedev%2FVoidBin)
 
 1. Push to GitHub repository
 2. Import to Vercel platform
@@ -131,6 +131,6 @@ Apache License 2.0 — [View License](LICENSE)
 
 <div align="center">
   <p>
-    <b>VOID|BIN</b> — A project by <a href="https://github.com/TheRealPerson98">TheRealPerson98</a>
+    <b>VOID|BIN</b> — A project by <a href="https://github.com/thejacedev">thejacedev</a>
   </p>
 </div>
